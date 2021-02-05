@@ -9,16 +9,25 @@ namespace Business.Concrete
 {
     public class CarMenager : ICarService
     {
-        ICarDal _carDal;
+        private ICarDal _carDal;
 
         public CarMenager(ICarDal carDal)
         {
+          
             _carDal = carDal;
         }
 
         public void Add(Car car)
         {
-            _carDal.Add(car);
+            if (CarValidationMenager.CheckCharacterLength(car.Name)==true && CarValidationMenager.CheckPrice(car.DailyPrice)==true)
+            {
+                _carDal.Add(car);
+
+            }
+            else
+            {
+                Console.WriteLine("Araba Eklenemedi");
+            }
         }
 
         public void Delete(Car car)
@@ -28,13 +37,17 @@ namespace Business.Concrete
 
         public List<Car> GetAll()
         {
-            return _carDal.GetAll();
+          return  _carDal.GetAll();
         }
 
-        public List<Car> GetById(int CarId)
+        public List<Car> GetCarsByBrandId(int BrandId)
         {
-            return _carDal.GetById(CarId);
+            return _carDal.GetAll(c => c.BrandId == BrandId);
+        }
 
+        public List<Car> GetCarsByColorId(int ColorId)
+        {
+            return _carDal.GetAll(c => c.ColorId == ColorId);
         }
 
         public void Update(Car car)

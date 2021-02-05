@@ -3,54 +3,36 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
     public class InMemoryCarDal : ICarDal
     {
-        List<Car> Cars;
-        public InMemoryCarDal()
+        public void Add(Car entity)
         {
-            Cars = new List<Car> {
-            new Car{Id=1,BrandId=1,ColorId=2,DailyPrice=750,Description="Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.",ModelYear=2020},
-            new Car{Id=2,BrandId=2,ColorId=4,DailyPrice=150,Description="Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.",ModelYear=2002},
-            new Car{Id=3,BrandId=4,ColorId=5,DailyPrice=150,Description="Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.",ModelYear=2004},
-            new Car{Id=4,BrandId=2,ColorId=3,DailyPrice=600,Description="Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.",ModelYear=2001},
-            new Car{Id=5,BrandId=5,ColorId=1,DailyPrice=500,Description="Kampımızla beraber paralelde geliştireceğimiz bir projemiz daha olacak. Araba kiralama sistemi yazıyoruz.",ModelYear=2019}
-
-            };
-        }
-        public void Add(Car car)
-        {
-            Cars.Add(car);
+            throw new NotImplementedException();
         }
 
-        public void Delete(Car car)
+        public void Delete(Car entity)
         {
-            Car dataToBeDeleted = Cars.FirstOrDefault(x=>x.Id==car.Id);
-            Cars.Remove(dataToBeDeleted);
-
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            return Cars;
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetById(int CarId)
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            return Cars.Where(x => x.Id == CarId).ToList();
+            throw new NotImplementedException();
         }
 
-        public void Update(Car car)
+        public void Update(Car entity)
         {
-            Car dataToBeUpdated = Cars.FirstOrDefault(x => x.Id == car.Id);
-            dataToBeUpdated.ColorId = car.ColorId;
-            dataToBeUpdated.BrandId = car.BrandId;
-            dataToBeUpdated.DailyPrice = car.DailyPrice;
-            dataToBeUpdated.Description = car.Description;
-            dataToBeUpdated.ModelYear = car.ModelYear;
+            throw new NotImplementedException();
         }
     }
 }
