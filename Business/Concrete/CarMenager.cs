@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -18,17 +19,10 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
-            if (CarValidationMenager.CheckCharacterLength(car.Name)==true && CarValidationMenager.CheckPrice(car.DailyPrice)==true)
-            {
-                _carDal.Add(car);
-
-            }
-            else
-            {
-                Console.WriteLine("Araba Eklenemedi");
-            }
+            _carDal.Add(car);
+            return new ErrorResult();
         }
 
         public void Delete(Car car)
