@@ -21,38 +21,37 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
-            _carDal.Add(car);
-            return new ErrorResult();
+            throw new NotImplementedException();
         }
 
         public void Delete(Car car)
         {
-            _carDal.Delete(car);
+            throw new NotImplementedException();
         }
 
         public List<Car> GetAll()
         {
-          return  _carDal.GetAll();
+            throw new NotImplementedException();
         }
 
         public List<CarDetailDto> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            throw new NotImplementedException();
         }
 
         public List<Car> GetCarsByBrandId(int BrandId)
         {
-            return _carDal.GetAll(c => c.BrandId == BrandId);
+            throw new NotImplementedException();
         }
 
         public List<Car> GetCarsByColorId(int ColorId)
         {
-            return _carDal.GetAll(c => c.ColorId == ColorId);
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
         {
-            _carDal.Update(car);
+            throw new NotImplementedException();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Business.Concrete
         public IResult Rental(Rental rental)
         {
             //eğer kiralanan araçların içinde yoksa
-            var result =  _rentalDal.GetRentInfo(rental);
+            var result =  _rentalDal.Get(r=>r.CarId==rental.CarId);
             if (result==null || result.ReturnDate!=null)
             {
                 _rentalDal.Add(rental);

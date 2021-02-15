@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Abstract
+namespace DataAccess.Abstract
 {
     public interface ICarService
     {
@@ -16,6 +16,5 @@ namespace Business.Abstract
         List<Car> GetCarsByBrandId(int BrandId);
         List<Car> GetCarsByColorId(int ColorId);
         List<CarDetailDto> GetCarDetails();
-
     }
 }
