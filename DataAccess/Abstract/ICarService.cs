@@ -10,11 +10,11 @@ namespace DataAccess.Abstract
     public interface ICarService
     {
         IResult Add(Car car);
-        IResult Update(Car car);
-        IResult Delete(Car car);
-        IDataResult<List<Car>> GetAll();
-       IDataResult<List<Car>> GetCarsByBrandId(int BrandId);
-        IDataResult<List<Car>> GetCarsByColorId(int ColorId);
-        IDataResult<List<CarDetailDto>> GetCarDetails();
+        void Update(Car car);
+        void Delete(Car car);
+        List<Car> GetAll();
+        List<Car> GetCarsByBrandId(int BrandId);
+        List<Car> GetCarsByColorId(int ColorId);
+        List<CarDetailDto> GetCarDetails();
     }
 }

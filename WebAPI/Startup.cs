@@ -32,6 +32,7 @@ namespace WebAPI
             services.AddControllers();
             services.AddSingleton<ICustomerService, CustomerMenager>();
             services.AddSingleton<ICustomerDal, EfCustomerDal>();
+<<<<<<< HEAD
 
             services.AddSingleton<IUserDal, EfUserDal>();
             services.AddSingleton<IUserService, UserMenager>();
@@ -47,6 +48,8 @@ namespace WebAPI
 
             services.AddSingleton<IRentalService, RentalMenager>();
             services.AddSingleton<IRentalDal, EfRentalDal>();
+=======
+>>>>>>> 936a6ee69beaf0fd40f4cd8308a01f2f1b35e3d7
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
