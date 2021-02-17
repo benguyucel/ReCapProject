@@ -61,7 +61,7 @@ namespace ConsoleUI
         private static void CarListMethod()
         {
             CarMenager carMenager = new CarMenager(new EfCarDal());
-            foreach (var carDetail in carMenager.GetCarDetails())
+            foreach (var carDetail in carMenager.GetCarDetails().Data)
             {
                 Console.WriteLine("CarID : {0} Car :{1},{2} Colour : {3} DailyPrice : {4} ", carDetail.CarId, carDetail.BrandName, carDetail.Name, carDetail.ColourName, carDetail.DailyPrice);
 

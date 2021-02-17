@@ -22,37 +22,40 @@ namespace Business.Concrete
         public IResult Add(Car car)
         {
             _carDal.Add(car);
-            return new ErrorResult();
+            return new SuccessResult("Araba Eklendi");
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
+            return new SuccessResult("Araba Silindi");
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-          return  _carDal.GetAll();
+            
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
-        public List<CarDetailDto> GetCarDetails()
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
-            return _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
-        public List<Car> GetCarsByBrandId(int BrandId)
+        public IDataResult<List<Car>> GetCarsByBrandId(int BrandId)
         {
-            return _carDal.GetAll(c => c.BrandId == BrandId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(x=>x.BrandId==BrandId));
         }
 
-        public List<Car> GetCarsByColorId(int ColorId)
+        public IDataResult<List<Car>> GetCarsByColorId(int ColorId)
         {
-            return _carDal.GetAll(c => c.ColorId == ColorId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(x => x.ColorId == ColorId));
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             _carDal.Update(car);
+            return new  SuccessResult("Araba Güncellendi");
         }
     }
 }

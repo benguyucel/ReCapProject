@@ -46,11 +46,11 @@ namespace Business.Concrete
 
         public IResult Update(User user)
         {
-            _userDal.Add(user);
+            _userDal.Update(user);
             return new SuccessResult();
         }
 
-        public IDataResult<List<User>> GetAllUserById(int id)
+        public IDataResult<List<User>> GetUserById(int id)
         {
 
             return new SuccessDataResult<List<User>>(_userDal.GetAll(u => u.Id == id));
