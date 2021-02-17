@@ -54,6 +54,7 @@ namespace WebAPI.Controllers
         public IActionResult UpdateCustomer(Customer customer)
         {
             var result = _customerService.Update(customer);
+
             if (result.Success)
             {
                 return Ok(result);
@@ -70,7 +71,5 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-
-
     }
 }
