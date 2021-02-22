@@ -13,16 +13,14 @@ namespace ConsoleUI
             //CarListMethod();
             //AddNewUser();
             //CustomerAddMethod();
-            RentalMenager rentalMenager = new RentalMenager(new EfRentalDal());
-         
-            var result =  rentalMenager.Rental(new Rental {CarId=12,CustomerId=5,RentDate=DateTime.Now});
-            Console.WriteLine(result.Message);
+            CarMenager carMenager = new CarMenager(new EfCarDal());
+            carMenager.Add(new Car { BrandId = 1, ColorId = 1, DailyPrice = 0, Description = "asdasd", ModelYear = "2001", Name = "Evo" });
     
         }
 
         private static void CustomerAddMethod()
         {
-            CustomerMenager customerMenager = new CustomerMenager(new EfCustomerDal());
+           /* CustomerMenager customerMenager = new CustomerMenager(new EfCustomerDal());
             customerMenager.Add(new Customer { UserId = 1, CompanyName = "Canedom" });
             customerMenager.Add(new Customer { UserId = 2, CompanyName = "Iceranis" });
             customerMenager.Add(new Customer { UserId = 3, CompanyName = "Ventozone" });
@@ -38,6 +36,7 @@ namespace ConsoleUI
             customerMenager.Add(new Customer { UserId = 13, CompanyName = "Vivafix" });
             customerMenager.Add(new Customer { UserId = 14, CompanyName = "Anquadtaxon" });
             customerMenager.Add(new Customer { UserId = 15, CompanyName = "Quadlam" });
+           */
         }
 
         private static void AddNewUser()

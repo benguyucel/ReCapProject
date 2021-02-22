@@ -29,27 +29,27 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddSingleton<ICustomerService, CustomerMenager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-<<<<<<< HEAD
+           services.AddControllers();
+            //services.AddSingleton<ICustomerService, CustomerMenager>();
+            //services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
-            services.AddSingleton<IUserDal, EfUserDal>();
-            services.AddSingleton<IUserService, UserMenager>();
 
-            services.AddSingleton<IColourService, ColourMenager>();
-            services.AddSingleton<IColourDal, EfColour>();
+            //services.AddSingleton<IUserDal, EfUserDal>();
+            //services.AddSingleton<IUserService, UserMenager>();
 
-            services.AddSingleton<IBrandDal, EfBrandDal>();
-            services.AddSingleton<IBrandService, BrandMenager>();
+            //services.AddSingleton<IColourService, ColourMenager>();
+            //services.AddSingleton<IColourDal, EfColourDal>();
 
-            services.AddSingleton<ICarDal, EfCarDal>();
-            services.AddSingleton<ICarService, CarMenager>();
+            //services.AddSingleton<IBrandDal, EfBrandDal>();
+            //services.AddSingleton<IBrandService, BrandMenager>();
 
-            services.AddSingleton<IRentalService, RentalMenager>();
-            services.AddSingleton<IRentalDal, EfRentalDal>();
-=======
->>>>>>> 936a6ee69beaf0fd40f4cd8308a01f2f1b35e3d7
+            //services.AddSingleton<ICarDal, EfCarDal>();
+            //services.AddSingleton<ICarService, CarMenager>();
+
+            //services.AddSingleton<IRentalService, RentalMenager>();
+            //services.AddSingleton<IRentalDal, EfRentalDal>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
