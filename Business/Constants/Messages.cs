@@ -20,5 +20,7 @@ namespace Business.Constants
         public static string CustomerDelete = "Müşteri  Silindi";
 
         public static string  CustomerListed = "Müşteriler Listelendi";
+
+        public static string ImageCountOfCarError = "Araba Fotoğrafları 5'den büyük olamaz";
     }
 }

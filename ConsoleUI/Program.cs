@@ -1,8 +1,10 @@
 ﻿using Business.Concrete;
+using Core.Utilities.Helpers;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
+using System.IO;
 
 namespace ConsoleUI
 {
@@ -10,12 +12,13 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+
             //CarListMethod();
             //AddNewUser();
             //CustomerAddMethod();
-            CarMenager carMenager = new CarMenager(new EfCarDal());
-            carMenager.Add(new Car { BrandId = 1, ColorId = 1, DailyPrice = 0, Description = "asdasd", ModelYear = "2001", Name = "Evo" });
-    
+            //CarMenager carMenager = new CarMenager(new EfCarDal());
+            //carMenager.Add(new Car { BrandId = 1, ColorId = 1, DailyPrice = 0, Description = "asdasd", ModelYear = "2001", Name = "Evo" });
+
         }
 
         private static void CustomerAddMethod()
