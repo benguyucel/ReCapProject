@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.Helpers;
 using Core.Utilities.Results;
@@ -49,7 +51,7 @@ namespace Business.Concrete
 
         }
 
-
+        [ValidationAspect(typeof(CarImageValidation))]
         public IResult Update(IFormFile formFile,CarImage carImage)
         {
           var result = _carImageDal.Get(x => x.Id == carImage.Id);
@@ -59,7 +61,7 @@ namespace Business.Concrete
             _carImageDal.Update(carImage);
             return new SuccessResult();
         }
-
+        [ValidationAspect(typeof(CarImageValidation))]
         public IResult Add(IFormFile formFile, CarImage carImage)
         {
             IResult result = BusinessRules.Run(CheckIfCarCountOfImageCorrect(carImage.CarID));
